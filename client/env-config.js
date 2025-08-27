@@ -6,7 +6,7 @@ const config = {
     API_URL: 'http://localhost:8080/api'
   },
   production: {
-    // 部署到Koyeb后，将下面的地址替换为你的实际地址
+    // 默认的生产环境后端地址（可以被环境变量覆盖）
     API_URL: 'https://YOUR_KOYEB_APP_NAME.koyeb.app/api'
   }
 };
@@ -15,7 +15,13 @@ const config = {
 const env = process.env.NODE_ENV || 'development';
 const currentConfig = config[env];
 
-console.log(`🌍 当前环境: ${env}`);
-console.log(`🔗 API地址: ${currentConfig.API_URL}`);
+// 优先使用部署环境提供的变量 REACT_APP_API_URL，其次回退到默认配置
+const injectedApiUrl = process.env.REACT_APP_API_URL;
+const resolvedApiUrl = injectedApiUrl && injectedApiUrl.trim() !== ''
+  ? injectedApiUrl.trim()
+  : currentConfig.API_URL;
 
-module.exports = currentConfig;
+console.log(`🌍 当前环境: ${env}`);
+console.log(`🔗 API地址: ${resolvedApiUrl}`);
+
+module.exports = { API_URL: resolvedApiUrl };
