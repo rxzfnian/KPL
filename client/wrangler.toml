@@ -3,7 +3,9 @@ compatibility_date = "2024-01-01"
 
 [build]
 command = "npm run build"
-output_directory = "build"
+
+[assets]
+directory = "build"
 
 [env.production]
 name = "kpl-guessr-frontend-prod"
