@@ -5,10 +5,10 @@ const path = require('path');
 
 const app = express();
 
-// 配置CORS
+// 配置CORS：不携带凭据，允许通配符来源，避免浏览器阻拦
 app.use(cors({
   origin: process.env.FRONTEND_URL || '*',
-  credentials: true
+  credentials: false
 }));
 app.use(express.json());
 
