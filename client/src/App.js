@@ -5,7 +5,6 @@ import {
   Typography,
   Card,
   CardContent,
-  CircularProgress,
   Chip,
   Dialog,
   DialogTitle,
@@ -50,25 +49,12 @@ const FIELD_LABELS = {
   hero: '擅长英雄'
 };
 
-// 绿色高亮标签栏
-const GREEN_FIELDS = ['team', 'state', 'position'];
-
 // 需要数字比较的栏
 const NUMBER_FIELDS = ['ch', 'FMVP', 'birthDate'];
 
 function splitTags(str) {
   if (!str || str === '数据未收录') return ['数据未收录'];
   return str.trim().split(/\s+/);
-}
-
-function getTagColor(tag, guessTags, targetTags) {
-  if (
-    (tag === '数据未收录' && targetTags.length === 1 && targetTags[0] === '数据未收录') ||
-    (tag !== '数据未收录' && targetTags.includes(tag))
-  ) {
-    return 'primary';
-  }
-  return 'default';
 }
 
 // 计算年龄函数
