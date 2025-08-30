@@ -19,6 +19,6 @@ service:
     buildCommand: npm install
     startCommand: npm start
   git:
-    repository: YOUR_GITHUB_REPO_URL
+    repository: https://github.com/rxzfnian/KPL.git
     branch: main
     onPush: true
