@@ -245,7 +245,21 @@ function App() {
   };
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ position: 'relative' }}>
+      {/* 右上角信息 */}
+      <Typography 
+        variant="caption" 
+        sx={{ 
+          position: 'absolute', 
+          top: 16, 
+          right: 16, 
+          color: 'text.secondary',
+          fontSize: '0.75rem',
+          zIndex: 1
+        }}
+      >
+        所有信息截止2025KPL春季赛
+      </Typography>
       <Box sx={{ my: 4 }}>
         <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
           <Button variant="outlined" onClick={fetchAllCharacters}>
