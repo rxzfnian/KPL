@@ -7,7 +7,7 @@ const config = {
   },
   production: {
     // 默认的生产环境后端地址（可以被环境变量覆盖）
-    API_URL: 'https://YOUR_KOYEB_APP_NAME.koyeb.app/api'
+    API_URL: 'https://unknown-ali-fpx2019-fd4b188c.koyeb.app/api'
   }
 };
 

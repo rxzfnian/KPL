@@ -28,9 +28,8 @@ import {
 import axios from 'axios';
 import { debounce } from 'lodash';
 
-// 修改为你的Koyeb后端地址
-// 部署到Koyeb后，将下面的地址替换为你的实际地址
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
+// Koyeb后端地址
+const API_URL = process.env.REACT_APP_API_URL || 'https://unknown-ali-fpx2019-fd4b188c.koyeb.app/api';
 
 const FIELDS = [
   'name', 'team', 'team_h', 'ch', 'FMVP', 'state', 'position', 'birthDate', 'hero'
