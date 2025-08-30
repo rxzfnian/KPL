@@ -245,43 +245,19 @@ function App() {
 
   return (
     <Container maxWidth="md" sx={{ position: 'relative' }}>
-      {/* 测试文字 - 确保可见 */}
-      <Typography 
-        variant="h4" 
-        sx={{ 
-          backgroundColor: 'yellow',
-          color: 'black',
-          padding: '20px',
-          margin: '20px 0',
-          textAlign: 'center',
-          border: '5px solid red',
-          borderRadius: '10px',
-          fontWeight: 'bold'
-        }}
-      >
-        🚨 测试：如果你能看到这个黄色框，说明页面已更新！ 🚨
-      </Typography>
-      
       {/* 右上角信息 */}
       <Typography 
-        variant="h6" 
+        variant="caption" 
         sx={{ 
-          position: 'fixed', 
-          top: 30, 
-          right: 30, 
-          color: 'white',
-          fontSize: '1.2rem',
-          fontWeight: 'bold',
-          backgroundColor: 'red',
-          padding: '12px 16px',
-          borderRadius: '8px',
-          border: '3px solid black',
-          zIndex: 9999,
-          boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-          textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
+          position: 'absolute', 
+          top: 16, 
+          right: 16, 
+          color: 'text.secondary',
+          fontSize: '0.8rem',
+          zIndex: 1
         }}
       >
-        🎯 数据收录截止2025KPL春季赛 🎯
+        数据收录截止2025KPL春季赛
       </Typography>
       <Box sx={{ my: 4 }}>
         <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
