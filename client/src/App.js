@@ -247,14 +247,20 @@ function App() {
     <Container maxWidth="md" sx={{ position: 'relative' }}>
       {/* 右上角信息 */}
       <Typography 
-        variant="caption" 
+        variant="body2" 
         sx={{ 
           position: 'absolute', 
-          top: 16, 
-          right: 16, 
-          color: 'text.secondary',
-          fontSize: '0.75rem',
-          zIndex: 1
+          top: 20, 
+          right: 20, 
+          color: 'text.primary',
+          fontSize: '1rem',
+          fontWeight: 'bold',
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          padding: '8px 12px',
+          borderRadius: '4px',
+          border: '1px solid #e0e0e0',
+          zIndex: 1,
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
         }}
       >
         数据收录截止2025KPL春季赛
