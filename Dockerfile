@@ -1,28 +1,27 @@
-# Use a small Node.js base image
+# Use Node.js 18 Alpine as base image
 FROM node:18-alpine
 
-# Create app directory
+# Set working directory
 WORKDIR /app
 
-# Install only server dependencies defined in deploy/package.json
+# Copy package files
 COPY deploy/package.json ./package.json
 
-# If you have a lockfile, uncomment the next two lines and change COPY accordingly
-# COPY deploy/package-lock.json ./package-lock.json
-# RUN npm ci --omit=dev
-
+# Install dependencies
 RUN npm install --omit=dev
 
-# Copy server source
+# Copy server source and data file
 COPY deploy/src ./deploy/src
+COPY data.csv ./data.csv
 
 # Environment
-ENV NODE_ENV=production \
-    PORT=8080
+ENV NODE_ENV=production
+ENV PORT=8080
 
+# Expose port
 EXPOSE 8080
 
-# Start the server
-CMD ["node", "deploy/src/server.js"]
+# Start command
+CMD ["npm", "start"]
 
 
