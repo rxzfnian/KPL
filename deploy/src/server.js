@@ -15,8 +15,7 @@ app.use(express.json());
 // 读取CSV数据
 function loadCSVData() {
   try {
-    // 使用T文件夹中的data.csv文件
-    const csvPath = path.join(__dirname, '..', '..', '..', 'data.csv');
+    const csvPath = path.join(__dirname, '..', '..', 'data.csv');
     const csvContent = fs.readFileSync(csvPath, 'utf8');
     const lines = csvContent.split('\n');
     
@@ -57,7 +56,7 @@ function loadCSVData() {
   }
 }
 
-// 备用硬编码数据（原来的数据）
+// 备用硬编码数据（包含T文件夹中data.csv的所有数据）
 function getFallbackData() {
   return [
     {
@@ -70,7 +69,7 @@ function getFallbackData() {
       state: "在役",
       position: "发育路",
       birthDate: "20011226",
-      hero: "公孙离"
+      hero: "公孙离 马可波罗"
     },
     {
       name: "钟意(陈家豪)",
@@ -121,6 +120,138 @@ function getFallbackData() {
       hero: "姬小满 曹操"
     },
     {
+      name: "䗊安(张广豪)",
+      team: "TCG",
+      team_h: "成都AG超玩会 TCG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "对抗路",
+      birthDate: "20021221",
+      hero: "李信 关羽 狂铁"
+    },
+    {
+      name: "笑影(汤佳杰)",
+      team: "上海EDGM",
+      team_h: "成都AG超玩会 济南RW侠 上海EDGM",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20000115",
+      hero: "墨子"
+    },
+    {
+      name: "小新(张新)",
+      team: "苏州KSG",
+      team_h: "成都AG超玩会 苏州KSG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20000323",
+      hero: "李信 关羽"
+    },
+    {
+      name: "Cat(陈正正)",
+      team: "成都AG超玩会",
+      team_h: "成都AG超玩会 武汉EStarPro QGhappy 杭州LGD.NBW 上海RNGM",
+      ch: "7",
+      ls: "3",
+      FMVP: "2",
+      state: "在役",
+      position: "中路",
+      birthDate: "19980525",
+      hero: "貂蝉 干将莫邪"
+    },
+    {
+      name: "未央(汤佳杰)",
+      team: "成都AG超玩会",
+      team_h: "成都AG超玩会",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "打野",
+      birthDate: "20010808",
+      hero: "镜 澜 暃"
+    },
+    {
+      name: "云黎(张思)",
+      team: "上海EDGM",
+      team_h: "成都AG超玩会 济南RW侠 上海EDGM",
+      ch: "1",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20000514",
+      hero: "貂蝉"
+    },
+    {
+      name: "小兽(肖闽辉)",
+      team: "成都AG超玩会",
+      team_h: "成都AG超玩会",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "打野",
+      birthDate: "19970817",
+      hero: "镜 澜 暃"
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "成都AG超玩会",
+      team_h: "成都AG超玩会",
+      ch: "1",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "发育路",
+      birthDate: "20050628",
+      hero: "公孙离 马可波罗 孙尚香"
+    },
+    {
+      name: "Best(郑国成)",
+      team: "成都AG超玩会",
+      team_h: "成都AG超玩会 上海RNG.M 西安WE QGhappy",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "对抗路",
+      birthDate: "19991022",
+      hero: "狂铁 达摩"
+    },
+    {
+      name: "老帅(张宇辰)",
+      team: "成都AG超玩会",
+      team_h: "成都AG超玩会 佛山DRG.GK 济南RW侠",
+      ch: "1",
+      ls: "1",
+      FMVP: "1",
+      state: "在役",
+      position: "中路",
+      birthDate: "19941012",
+      hero: "貂蝉"
+    },
+    {
+      name: "爱思/爱思(唐田)",
+      team: "成都AG超玩会",
+      team_h: "成都AG超玩会 济南RW侠",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "19990805",
+      hero: "不知火舞 干将"
+    },
+    {
       name: "Fly(彭云飞)",
       team: "济南RW侠",
       team_h: "重庆狼队 济南RW侠 QGhappy",
@@ -154,7 +285,19 @@ function getFallbackData() {
       state: "在役",
       position: "中路",
       birthDate: "20020723",
-      hero: ""
+      hero: "干将莫邪"
+    },
+    {
+      name: "妖刀(钟文林)",
+      team: "重庆狼队",
+      team_h: "重庆狼队 广州TTG.XQ",
+      ch: "1",
+      ls: "1",
+      FMVP: "0",
+      state: "在役",
+      position: "发育路",
+      birthDate: "20041011",
+      hero: "公孙离 马可波罗"
     },
     {
       name: "小胖(李达亨)",
@@ -166,6 +309,138 @@ function getFallbackData() {
       state: "在役",
       position: "打野",
       birthDate: "20040712",
+      hero: "裴擒虎 大司命 镜"
+    },
+    {
+      name: "Hurt/刺痛(夏圣钦)",
+      team: "重庆狼队",
+      team_h: "重庆狼队 QGhappy",
+      ch: "4",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "发育路",
+      birthDate: "19970128",
+      hero: "公孙离 马可波罗"
+    },
+    {
+      name: "帆帆(杨帆)",
+      team: "重庆狼队",
+      team_h: "重庆狼队 广州TTG.XQ 南通Hero久竞",
+      ch: "1",
+      ls: "1",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20031116",
+      hero: "不知火舞"
+    },
+    {
+      name: "末将(向鱼)",
+      team: "重庆狼队",
+      team_h: "QGhappy 重庆VG",
+      ch: "1",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20000311",
+      hero: ""
+    },
+    {
+      name: "Alan(王添龙)",
+      team: "重庆狼队",
+      team_h: "Qghappy 武汉EStarPro",
+      ch: "5",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "游走",
+      birthDate: "19991023",
+      hero: ""
+    },
+    {
+      name: "yang(王添龙)",
+      team: "重庆狼队",
+      team_h: "QGhappy 广州TTG.XQ",
+      ch: "3",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "游走",
+      birthDate: "19991118",
+      hero: ""
+    },
+    {
+      name: "小胖(李达亨)",
+      team: "苏州KSG",
+      team_h: "重庆狼队 苏州KSG QGhappy",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "打野",
+      birthDate: "20010920",
+      hero: "露娜 镜 澜 裴擒虎"
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "苏州KSG",
+      team_h: "重庆狼队 苏州KSG QGhappy",
+      ch: "6",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "发育路",
+      birthDate: "20011216",
+      hero: "公孙离 伽罗"
+    },
+    {
+      name: "小新(张新)",
+      team: "重庆狼队",
+      team_h: "重庆狼队 Qghappy 广州TTG.XQ 上海EDGM",
+      ch: "4",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20001004",
+      hero: "貂蝉 干将"
+    },
+    {
+      name: "月色(张佳豪)",
+      team: "重庆狼队",
+      team_h: "重庆狼队 南通Hero久竞 重庆VG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20011023",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro 济南RW侠 重庆KLG",
+      ch: "2",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "19980806",
+      hero: ""
+    },
+    {
+      name: "诺言(郭桂鑫)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro",
+      ch: "2",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "对抗路",
+      birthDate: "19991203",
       hero: ""
     },
     {
@@ -175,10 +450,10 @@ function getFallbackData() {
       ch: "7",
       ls: "",
       FMVP: "2",
-      state: "退役",
+      state: "在役",
       position: "打野",
       birthDate: "20010305",
-      hero: ""
+      hero: "镜 澜 暃"
     },
     {
       name: "清融(黄垚钦)",
@@ -190,6 +465,30 @@ function getFallbackData() {
       state: "在役",
       position: "中路",
       birthDate: "20031029",
+      hero: "西施 不知火舞"
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "北京JDG",
+      team_h: "武汉EStarPro 杭州LGD.NBW 济南RW侠 北京JDG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "发育路",
+      birthDate: "20040723",
+      hero: "马可波罗 公孙离 鲁班七号"
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro 深圳DYG",
+      ch: "6",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "19991026",
       hero: ""
     },
     {
@@ -217,43 +516,259 @@ function getFallbackData() {
       hero: ""
     },
     {
-      name: "九尾(许鑫蓁)",
-      team: "南通Hero久竞",
-      team_h: "广州TTG.XQ 杭州LGD.NBW 南通Hero久竞",
+      name: "墨墨(陈雪健)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro 佛山DRG.GK 北京JDG 上海EDGM",
       ch: "0",
       ls: "0",
       FMVP: "0",
       state: "在役",
       position: "中路",
-      birthDate: "20021122",
-      hero: "不知火舞 王昭君 姜子牙"
+      birthDate: "20051026",
+      hero: ""
     },
     {
-      name: "钎城(周诣涛)",
-      team: "深圳DYG",
-      team_h: "广州TTG.XQ 深圳DYG",
+      name: "小玖(张佳豪)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro 佛山DRG.GK 北京JDG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "对抗路",
+      birthDate: "20040511",
+      hero: ""
+    },
+    {
+      name: "小楼(张佳豪)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro 西安WE TCG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "打野",
+      birthDate: "20050825",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro 苏州KSG",
       ch: "0",
       ls: "0",
       FMVP: "0",
       state: "在役",
       position: "发育路",
-      birthDate: "20020207",
-      hero: "鲁班七号 百里守约"
+      birthDate: "20051018",
+      hero: ""
     },
     {
-      name: "清清(吴金翔)",
-      team: "广州TTG",
-      team_h: "广州TTG.XQ 深圳DYG",
-      ch: "2",
-      ls: "2",
+      name: "小玖(张佳豪)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro 北京WB 深圳DYG 上海RNGM",
+      ch: "0",
+      ls: "",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20030521",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "武汉EStarPro",
+      team_h: "武汉EStarPro XYG 南通Hero久竞",
+      ch: "0",
+      ls: "",
       FMVP: "0",
       state: "在役",
       position: "对抗路",
-      birthDate: "20020626",
-      hero: "关羽 老夫子"
+      birthDate: "20050304",
+      hero: ""
     },
     {
-      name: "小义(汪启俊)",
+      name: "小玖(张佳豪)",
+      team: "南通Hero久竞",
+      team_h: "苏州KSG 南通Hero久竞",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "发育路",
+      birthDate: "20040412",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "佛山DRG",
+      team_h: "佛山DRG.GK",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "发育路",
+      birthDate: "20040414",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "TCG",
+      team_h: "佛山DRG.GK 西安WE 深圳DYG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "19951123",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "西安WE",
+      team_h: "佛山DRG.GK 西安WE",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "对抗路",
+      birthDate: "20020217",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "西安WE",
+      team_h: "佛山DRG.GK 西安WE",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "打野",
+      birthDate: "20000901",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "佛山DRG",
+      team_h: "佛山DRG.GK 深圳DYG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "19930425",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "深圳DYG",
+      team_h: "佛山DRG.GK 深圳DYG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "对抗路",
+      birthDate: "19991020",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "深圳DYG",
+      team_h: "佛山DRG.GK 南通Hero久竞",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20020121",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "深圳DYG",
+      team_h: "佛山DRG.GK 南通Hero久竞",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20040205",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "上海EDGM",
+      team_h: "上海EDGM 北京WB 长沙TES.A",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20010530",
+      hero: "干将溪 缇莉"
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "上海EDGM",
+      team_h: "上海EDGM 成都AG超玩会",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "打野",
+      birthDate: "20001201",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "上海EDGM",
+      team_h: "上海EDGM",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "对抗路",
+      birthDate: "20060118",
+      hero: "狂铁"
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "上海EDGM",
+      team_h: "上海EDGM",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "发育路",
+      birthDate: "20061028",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "上海EDGM",
+      team_h: "上海EDGM 南通Hero久竞 深圳DYG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "打野",
+      birthDate: "20040614",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
+      team: "上海EDGM",
+      team_h: "上海EDGM 苏州KSG",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20031022",
+      hero: ""
+    },
+    {
+      name: "小玖(张佳豪)",
       team: "南通Hero久竞",
       team_h: "南通Hero久竞 深圳DYG",
       ch: "1",
@@ -262,43 +777,67 @@ function getFallbackData() {
       state: "在役",
       position: "打野",
       birthDate: "20001203",
-      hero: ""
+      hero: "裴擒虎"
     },
     {
-      name: "阿豆(蒋涛)",
+      name: "小玖(张佳豪)",
       team: "南通Hero久竞",
-      team_h: "北京WB.TS 广州TTG.XQ 南通Hero久竞",
-      ch: "2",
-      ls: "",
+      team_h: "南通Hero久竞 上海EDGM",
+      ch: "0",
+      ls: "0",
       FMVP: "0",
       state: "在役",
-      position: "游走",
-      birthDate: "19980619",
+      position: "打野",
+      birthDate: "20051012",
       hero: ""
     },
     {
-      name: "渡劫(谢祯城)",
-      team: "济南RW侠",
-      team_h: "济南RW侠",
+      name: "小玖(张佳豪)",
+      team: "南通Hero久竞",
+      team_h: "南通Hero久竞 TCG XYG",
       ch: "0",
       ls: "0",
       FMVP: "0",
-      state: "退役",
-      position: "对抗路",
-      birthDate: "20010828",
-      hero: "李信"
+      state: "在役",
+      position: "中路",
+      birthDate: "20050608",
+      hero: ""
     },
     {
-      name: "花云(张凯峰)",
-      team: "济南RW侠",
-      team_h: "济南RW侠",
+      name: "小玖(张佳豪)",
+      team: "南通Hero久竞",
+      team_h: "南通Hero久竞",
       ch: "0",
       ls: "0",
       FMVP: "0",
-      state: "退役",
+      state: "在役",
+      position: "中路",
+      birthDate: "20041104",
+      hero: ""
+    },
+    {
+      name: "Silver(黄宝帅)",
+      team: "南通Hero久竞",
+      team_h: "南通Hero久竞 上海EDGM",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
       position: "发育路",
-      birthDate: "20021006",
-      hero: "公孙离 李元芳 伽罗"
+      birthDate: "20040503",
+      hero: ""
+    },
+    {
+      name: "墨墨(陈雪健)",
+      team: "南通Hero久竞",
+      team_h: "南通Hero久竞 济南RW侠 武汉EStarPro",
+      ch: "0",
+      ls: "0",
+      FMVP: "0",
+      state: "在役",
+      position: "中路",
+      birthDate: "20050731",
+      hero: ""
     }
   ];
 }

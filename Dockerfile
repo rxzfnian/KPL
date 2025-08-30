@@ -13,9 +13,8 @@ COPY deploy/package.json ./package.json
 
 RUN npm install --omit=dev
 
-# Copy server source and data file expected at repo root
+# Copy server source
 COPY deploy/src ./deploy/src
-COPY data.csv ./data.csv
 
 # Environment
 ENV NODE_ENV=production \
