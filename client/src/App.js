@@ -245,6 +245,23 @@ function App() {
 
   return (
     <Container maxWidth="md" sx={{ position: 'relative' }}>
+      {/* 测试文字 - 确保可见 */}
+      <Typography 
+        variant="h4" 
+        sx={{ 
+          backgroundColor: 'yellow',
+          color: 'black',
+          padding: '20px',
+          margin: '20px 0',
+          textAlign: 'center',
+          border: '5px solid red',
+          borderRadius: '10px',
+          fontWeight: 'bold'
+        }}
+      >
+        🚨 测试：如果你能看到这个黄色框，说明页面已更新！ 🚨
+      </Typography>
+      
       {/* 右上角信息 */}
       <Typography 
         variant="h6" 
