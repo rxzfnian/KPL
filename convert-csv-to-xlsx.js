@@ -5,8 +5,8 @@ const XLSX = require('xlsx');
 console.log('🔄 开始转换CSV到XLSX...');
 
 try {
-  // 读取CSV文件
-  const csvPath = path.join(__dirname, 'data.csv');
+  // 读取CSV文件 - 使用T文件夹中的data.csv
+  const csvPath = path.join(__dirname, '..', 'data.csv');
   const csvContent = fs.readFileSync(csvPath, 'utf8');
   
   // 解析CSV内容

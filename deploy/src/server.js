@@ -15,7 +15,8 @@ app.use(express.json());
 // 读取CSV数据
 function loadCSVData() {
   try {
-    const csvPath = path.join(__dirname, '..', '..', 'data.csv');
+    // 使用T文件夹中的data.csv文件
+    const csvPath = path.join(__dirname, '..', '..', '..', 'data.csv');
     const csvContent = fs.readFileSync(csvPath, 'utf8');
     const lines = csvContent.split('\n');
     
