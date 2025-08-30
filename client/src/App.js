@@ -257,7 +257,7 @@ function App() {
           zIndex: 1
         }}
       >
-        所有信息截止2025KPL春季赛
+        数据收录截止2025KPL春季赛
       </Typography>
       <Box sx={{ my: 4 }}>
         <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
